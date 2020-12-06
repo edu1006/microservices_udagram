@@ -22,5 +22,3 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push mestrefox/udagram-user-api
   - docker push mestrefox/udagram-feed-api
-#   - docker push mestrefox/udagram-reverseproxy
-#   - docker push mestrefox/udagram-frontend
