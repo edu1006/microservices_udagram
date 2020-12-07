@@ -1,15 +1,7 @@
 version: "3"
 services:
-  reverseproxy:
-      image: hmisonne/reverseproxy
-      ports:
-          - 8080:8080
-      restart: always
-      depends_on:
-        - udagram-user
-        - udagram-feed     
   udagram-user:
-    image: hmisonne/udagram-user
+    image: mestrefox/udagram-user-api
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -23,7 +15,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: $URL
   udagram-feed:
-    image: hmisonne/udagram-feed
+    image: mestrefox/udagram-feed-api
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -36,7 +28,3 @@ services:
       AWS_MEDIA_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: $URL
-  udagram-frontend:
-    image: hmisonne/udagram-frontend
-    ports:
-      - "8100:80"

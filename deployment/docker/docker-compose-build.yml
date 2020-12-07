@@ -4,18 +4,10 @@ services:
     build:
       context: ../../udagram-api-user
       dockerfile: Dockerfile
-    image: hmisonne/udagram-user
+    image: mestrefox/udagram-user-api
   udagram-feed:
     build:
       context: ../../udagram-api-feed
       dockerfile: Dockerfile
-    image: hmisonne/udagram-feed
-  reverseproxy:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: hmisonne/reverseproxy
-  udagram-frontend:
-    build:
-      context: ../../udagram-frontend  
-    image: hmisonne/udagram-frontend
+    image: mestrefox/udagram-feed
+ 
